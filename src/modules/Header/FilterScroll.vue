@@ -3,7 +3,7 @@
     <Container>
       <ul class="scroll-bar">
         <li v-for="item in list" :key="item.id">
-          <router-link class="scroll-link">{{ item.name }}</router-link>
+          <a class="scroll-link">{{ item.name }}</a>
         </li>
       </ul>
     </Container>
@@ -16,8 +16,11 @@ export default {
   name: "FilterScroll",
   data() {
     return {
-      list: data,
+      list: [],
     };
+  },
+  mounted() {
+    this.list = data;
   },
 };
 </script>
