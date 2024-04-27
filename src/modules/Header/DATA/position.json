@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Акціі",
+    "title": "Actions"
+  },
+  {
+    "id": 2,
+    "name": "Сети",
+    "title": "Sets"
+  },
+  {
+    "id": 3,
+    "name": "Преміум роли",
+    "title": "Premium Rolls"
+  },
+  {
+    "id": 4,
+    "name": "Дракони",
+    "title": "Dragons"
+  },
+  {
+    "id": 5,
+    "name": "Запечені роли",
+    "title": "Baked Rolls"
+  },
+  {
+    "id": 6,
+    "name": "Теплі роли",
+    "title": "Warm Rolls"
+  },
+  {
+    "id": 7,
+    "name": "Філадельфія",
+    "title": "Philadelphia"
+  },
+  {
+    "id": 8,
+    "name": "Каліфорнія",
+    "title": "California"
+  },
+  {
+    "id": 9,
+    "name": "Футомакі",
+    "title": "Futomaki"
+  },
+  {
+    "id": 10,
+    "name": "Каліфорнія в кунжуті",
+    "title": "California with Sesame"
+  },
+  {
+    "id": 11,
+    "name": "Макі",
+    "title": "Maki"
+  },
+  {
+    "id": 12,
+    "name": "Суші",
+    "title": "Sushi"
+  },
+  {
+    "id": 13,
+    "name": "Суп",
+    "title": "Soup"
+  },
+  {
+    "id": 14,
+    "name": "Салат",
+    "title": "Salad"
+  },
+  {
+    "id": 15,
+    "name": "Холодні напої",
+    "title": "Cold Drinks"
+  },
+  {
+    "id": 16,
+    "name": "Набір для суші",
+    "title": "Sushi Set"
+  }
+]

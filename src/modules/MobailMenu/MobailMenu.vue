@@ -1,0 +1,91 @@
+<template>
+  <div class="modal">
+    <button class="close-btn" @click="closeModalMenu">
+      <svg height="24" width="24">
+        <use href="../../shared/img/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <ul class="list">
+      <li v-for="item in list" :key="item.id">
+        <router-link class="list-link">{{ item.name }}</router-link>
+      </li>
+    </ul>
+    <ul class="address-list">
+      <li>
+        <a class="phone-link" href="tel:+380671868667">+38 (067) 186 86 67</a>
+      </li>
+      <li>
+        <a class="phone-link" href="tel:+380505643977">+38 (050) 564 39 77</a>
+      </li>
+      <li><a class="phone-link" href="">Закревського 103</a></li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import data from "../Header/DATA/position.json";
+export default {
+  name: "MobailMenu",
+  props: {
+    closeModalMenu: Function,
+  },
+  data() {
+    return {
+      list: data,
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.modal {
+  background-color: #f5f5f7;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: auto;
+  padding: 30px 20px;
+}
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  & > svg {
+    stroke: #000;
+  }
+}
+.list {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+}
+.list-link {
+  padding: 10px 15px;
+  color: #000;
+  font-size: 20px;
+  white-space: nowrap;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.address-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+.phone-link {
+  color: #000;
+  font-size: 18px;
+}
+</style>
