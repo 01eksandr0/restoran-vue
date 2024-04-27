@@ -7,7 +7,7 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
           ><svg>
-            <use xlink:href="./icons.svg#icon-instagram"></use>
+            <use href="../../shared/img/icons.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
@@ -15,7 +15,7 @@
         <router-link to="/shop" class="nav-link"
           >Кошик
           <svg>
-            <use href="./icons.svg#icon-cart"></use>
+            <use xlink:href="../../shared/img/icons.svg#icon-cart"></use>
           </svg>
         </router-link>
       </li>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import data from "../Header/icons.svg";
+import data from "../../shared/img/icons.svg";
 export default {
   name: "NavBar",
   props: {
