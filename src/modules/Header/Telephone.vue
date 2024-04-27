@@ -5,7 +5,7 @@
     </a>
     <p class="tell">+38 (065) 345-67-89</p>
     <svg height="16" width="16" :class="{ 'icon-active': active }">
-      <use href="../../shared/img/icons.svg#icon-circle-down"></use>
+      <use xlink:href="../../shared/img/icons.svg#icon-circle-down"></use>
     </svg>
     <PhoneModal v-if="active" />
   </div>
