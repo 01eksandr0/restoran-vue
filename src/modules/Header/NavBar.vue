@@ -15,7 +15,7 @@
         <router-link class="nav-link"
           >Кошик
           <svg>
-            <use xlink:href="../../shared/img/icons.svg#icon-cart"></use>
+            <use :xlink:href="icons + '#icon-cart'"></use>
           </svg>
         </router-link>
       </li>
