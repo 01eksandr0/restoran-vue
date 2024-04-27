@@ -7,7 +7,7 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
           ><svg>
-            <use href="./icons.svg#icon-instagram"></use>
+            <use :href="icons + '#icon-instagram'"></use>
           </svg>
         </a>
       </li>
@@ -33,6 +33,7 @@
 <script>
 import data from "../../shared/img/icons.svg";
 export default {
+  name: "NavBar",
   props: {
     openMobailMenu: Function,
   },
