@@ -7,7 +7,7 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
           ><svg>
-            <use :href="icons + '#icon-instagram'"></use>
+            <use xlink:href="../../shared/img/icons.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
