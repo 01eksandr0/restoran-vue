@@ -7,7 +7,7 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
           ><svg>
-            <use :xlink:href="`${icons}#icon-instagram`"></use>
+            <use href="./icons.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
@@ -15,14 +15,14 @@
         <router-link to="/shop" class="nav-link"
           >Кошик
           <svg>
-            <use :href="icons + '#icon-cart'"></use>
+            <use href="./icons.svg#icon-cart"></use>
           </svg>
         </router-link>
       </li>
       <li class="menu-btn">
         <button class="nav-link" @click="openMobailMenu">
           <svg height="20" width="20">
-            <use xlink:href="../../shared/img/icons.svg#icon-menu"></use>
+            <use xlink:href="./icons.svg#icon-menu"></use>
           </svg>
         </button>
       </li>
