@@ -7,7 +7,7 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
           ><svg>
-            <use :href="icons + '#icon-instagram'"></use>
+            <use href="./icons.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import data from "../../shared/img/icons.svg";
+import data from "../Header/icons.svg";
 export default {
   name: "NavBar",
   props: {
