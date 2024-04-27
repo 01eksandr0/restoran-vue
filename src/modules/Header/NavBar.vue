@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import icons from "../../shared/img/icons.svg";
+import data from "../../shared/img/icons.svg";
 export default {
   props: {
     openMobailMenu: Function,
@@ -42,7 +42,7 @@ export default {
     };
   },
   mounted() {
-    this.icons = icons;
+    this.icons = data;
   },
 };
 </script>
