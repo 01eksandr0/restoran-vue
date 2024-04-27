@@ -7,7 +7,7 @@
     </button>
     <ul class="list">
       <li v-for="item in list" :key="item.id">
-        <router-link class="list-link">{{ item.name }}</router-link>
+        <a href="" class="list-link">{{ item.name }}</a>
       </li>
     </ul>
     <ul class="address-list">
