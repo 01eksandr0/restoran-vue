@@ -9,10 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@vue-hero-icons/outline": "^1.7.2",
+    "@vue-hero-icons/solid": "^1.7.2",
     "axios": "^1.6.8",
+    "feather-icons": "^4.29.1",
+    "font-awesome": "^4.7.0",
     "nanoid": "^5.0.7",
+    "oh-vue-icons": "^1.0.0-rc3",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.21",
+    "vue-feather-icons": "^5.1.0",
+    "vue-icons": "^2.0.0",
     "vue-router": "^4.3.2",
     "vuex": "^4.1.0"
   },

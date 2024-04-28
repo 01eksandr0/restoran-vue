@@ -6,9 +6,8 @@
           class="nav-link"
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
-          ><svg>
-            <use href="../../shared/img/icons.svg#icon-instagram"></use>
-          </svg>
+        >
+          <v-icon name="bi-instagram" scale="1.5" />
         </a>
       </li>
       <li class="shop">
@@ -31,20 +30,13 @@
 </template>
 
 <script>
-import data from "../../shared/img/icons.svg";
 export default {
   name: "NavBar",
   props: {
     openMobailMenu: Function,
   },
   data() {
-    return {
-      icons: "",
-    };
-  },
-  mounted() {
-    this.icons = data;
-    console.log(data);
+    return {};
   },
 };
 </script>
