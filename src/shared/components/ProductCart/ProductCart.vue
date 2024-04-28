@@ -11,9 +11,15 @@
       <div class="bottom">
         <p class="price">180 грн</p>
         <div class="control">
-          <button>-</button>
-          <p class="counter">{{ quantity }}</p>
-          <button class="btn">+</button>
+          <button
+            v-if="getQuantity"
+            class="btn-minus"
+            @click="discrimProduct(info.id)"
+          >
+            -
+          </button>
+          <p class="counter" v-if="getQuantity">{{ getQuantity }}</p>
+          <button class="btn-plus" @click="updateList(info)">+</button>
         </div>
       </div>
     </div>
@@ -21,22 +27,22 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "ProductCart",
   props: {
     info: Object,
   },
-  data() {
-    return {
-      quantity: 0,
-    };
+  computed: {
+    ...mapGetters(["shopList"]),
+    getQuantity() {
+      return (
+        this.shopList.find((item) => item.id === this.info.id)?.quantity || 0
+      );
+    },
   },
-  computed: mapGetters(["shopList"]),
-  mounted() {
-    const cart = this.shopList.find((i) => i.id === this.info.id);
-    console.log(cart);
-    this.quantity = cart.quantity || 0;
+  methods: {
+    ...mapActions(["updateList", "discrimProduct"]),
   },
 };
 </script>
@@ -94,9 +100,27 @@ export default {
 .control {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
-.btn {
+.btn-minus {
+  border-radius: 5px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  letter-spacing: normal;
+  color: #fff;
+  background-color: rgb(238, 191, 51);
+  transition: color $animation-duration $animation-time-function,
+    background-color $animation-duration $animation-time-function;
+  &:hover {
+    background-color: $orange;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+.btn-plus {
   padding: 7px 15px;
   border-radius: 5px;
   font-size: 26px;
@@ -109,6 +133,9 @@ export default {
     color: rgba(255, 255, 255, 0.8);
   }
 }
+.counter {
+  font-size: 24px;
+}
 @include media(desktop) {
   .item {
     width: 280px;
@@ -119,3 +146,4 @@ export default {
   }
 }
 </style>
+import { computed } from "vue";

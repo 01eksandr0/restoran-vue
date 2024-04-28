@@ -17,6 +17,7 @@ import MobailMenu from "../MobailMenu/MobailMenu.vue";
 import NavBar from "./NavBar.vue";
 import Telephone from "./Telephone.vue";
 import FilterScroll from "./FilterScroll.vue";
+
 export default {
   components: { NavBar, Telephone, FilterScroll, MobailMenu },
   data() {

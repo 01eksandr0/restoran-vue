@@ -15,6 +15,7 @@
           >Кошик
           <v-icon name="fa-shopping-cart" />
         </router-link>
+        <span v-if="getQuantity" class="quantity">{{ getQuantity }}</span>
       </li>
       <li class="menu-btn">
         <button class="nav-link" @click="openMobailMenu">
@@ -26,14 +27,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "NavBar",
   props: {
     openMobailMenu: Function,
   },
-  data() {
-    return {};
-  },
+  computed: mapGetters(["getQuantity"]),
 };
 </script>
 
@@ -82,7 +82,25 @@ export default {
   }
   .shop {
     display: block;
+    position: relative;
   }
+  .quantity {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $orange;
+    top: -5px;
+    right: -5px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+  }
+
   .menu-btn {
     display: none;
   }

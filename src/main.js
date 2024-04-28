@@ -11,6 +11,8 @@ import {
   FaShoppingCart,
   BiTelephone,
   BiChevronDown,
+  BiChevronRight,
+  IoClose,
 } from "oh-vue-icons/icons";
 
 const app = createApp(App);
@@ -20,7 +22,9 @@ addIcons(
   CoMenu,
   FaShoppingCart,
   BiTelephone,
-  BiChevronDown
+  BiChevronDown,
+  BiChevronRight,
+  IoClose
 );
 components.forEach((component) => {
   app.component(component.name, component);

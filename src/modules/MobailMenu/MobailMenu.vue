@@ -1,9 +1,7 @@
 <template>
   <div class="modal">
     <button class="close-btn" @click="closeModalMenu">
-      <svg height="24" width="24">
-        <use href="../../shared/img/icons.svg#icon-close"></use>
-      </svg>
+      <v-icon name="io-close" scale="2" />
     </button>
     <ul class="list">
       <li v-for="item in list" :key="item.id">
@@ -47,7 +45,7 @@ export default {
   bottom: 0;
   right: 0;
   overflow-x: auto;
-  padding: 30px 20px;
+  padding: 60px 20px;
 }
 .close-btn {
   display: flex;
