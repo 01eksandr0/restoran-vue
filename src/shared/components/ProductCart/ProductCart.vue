@@ -10,17 +10,33 @@
       </p>
       <div class="bottom">
         <p class="price">180 грн</p>
-        <button class="btn">Хочу</button>
+        <div class="control">
+          <button>-</button>
+          <p class="counter">{{ quantity }}</p>
+          <button class="btn">+</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "ProductCart",
   props: {
     info: Object,
+  },
+  data() {
+    return {
+      quantity: 0,
+    };
+  },
+  computed: mapGetters(["shopList"]),
+  mounted() {
+    const cart = this.shopList.find((i) => i.id === this.info.id);
+    console.log(cart);
+    this.quantity = cart.quantity || 0;
   },
 };
 </script>
@@ -75,16 +91,21 @@ export default {
   color: rgba(0, 0, 0, 0.7);
   font-size: 26px;
 }
+.control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 .btn {
-  padding: 6px 20px;
+  padding: 7px 15px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 26px;
   color: #fff;
-  background-color: $orange;
+  background-color: lightgreen;
   transition: color $animation-duration $animation-time-function,
     background-color $animation-duration $animation-time-function;
   &:hover {
-    background-color: darken($color: $orange, $amount: 5);
+    background-color: green;
     color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -98,4 +119,3 @@ export default {
   }
 }
 </style>
-import { info } from 'sass';

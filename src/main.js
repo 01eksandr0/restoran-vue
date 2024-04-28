@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import router from "../src/router/router";
 import components from "./shared/components/index";
 import App from "./App.vue";
+import store from "./store/store.js";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import {
   BiInstagram,
@@ -25,4 +26,4 @@ components.forEach((component) => {
   app.component(component.name, component);
 });
 app.component("v-icon", OhVueIcon);
-app.use(router).mount("#app");
+app.use(router).use(store).mount("#app");
