@@ -7,22 +7,18 @@
           href="https://www.instagram.com/nashi_sushi_bar/?igshid=NzAzN2Q1NTE%3D"
           target="_blank"
         >
-          <v-icon name="bi-instagram" scale="1.5" />
+          <v-icon name="bi-instagram" scale="2" />
         </a>
       </li>
       <li class="shop">
         <router-link to="/shop" class="nav-link"
           >Кошик
-          <svg>
-            <use xlink:href="../../shared/img/icons.svg#icon-cart"></use>
-          </svg>
+          <v-icon name="fa-shopping-cart" />
         </router-link>
       </li>
       <li class="menu-btn">
         <button class="nav-link" @click="openMobailMenu">
-          <svg height="20" width="20">
-            <use xlink:href="./icons.svg#icon-menu"></use>
-          </svg>
+          <v-icon name="co-menu" />
         </button>
       </li>
     </ul>

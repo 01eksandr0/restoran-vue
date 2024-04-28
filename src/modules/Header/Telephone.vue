@@ -4,9 +4,7 @@
       <div class="imageContainer"></div>
     </a>
     <p class="tell">+38 (065) 345-67-89</p>
-    <svg height="16" width="16" :class="{ 'icon-active': active }">
-      <use xlink:href="../../shared/img/icons.svg#icon-circle-down"></use>
-    </svg>
+    <v-icon name="bi-chevron-down" :class="{ 'icon-active': active }" />
     <PhoneModal v-if="active" />
   </div>
   <div
@@ -14,20 +12,7 @@
     @click="active = !active"
     :class="{ phoneContainer: true, phoneContainerActive: active }"
   >
-    <img
-      v-if="active"
-      src="./image/phone_call.svg"
-      alt="Phone icon"
-      height="20"
-      width="20"
-    />
-    <img
-      v-else
-      src="./image/phone_callBlack.svg"
-      alt="Phone icon"
-      height="20"
-      width="20"
-    />
+    <v-icon name="bi-telephone" :fill="active ? 'rgb(235, 109, 10)' : '#000'" />
     <PhoneModal v-if="active" />
   </div>
 </template>

@@ -3,10 +3,24 @@ import router from "../src/router/router";
 import components from "./shared/components/index";
 import App from "./App.vue";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { BiInstagram, RiZhihuFill } from "oh-vue-icons/icons";
+import {
+  BiInstagram,
+  RiZhihuFill,
+  CoMenu,
+  FaShoppingCart,
+  BiTelephone,
+  BiChevronDown,
+} from "oh-vue-icons/icons";
 
 const app = createApp(App);
-addIcons(BiInstagram, RiZhihuFill);
+addIcons(
+  BiInstagram,
+  RiZhihuFill,
+  CoMenu,
+  FaShoppingCart,
+  BiTelephone,
+  BiChevronDown
+);
 components.forEach((component) => {
   app.component(component.name, component);
 });
