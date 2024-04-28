@@ -23,4 +23,14 @@ export default {};
   border-radius: 30px;
   overflow: hidden;
 }
+@include media(tablet) {
+  .img-container {
+    height: 300px;
+  }
+}
+@include media(desktop) {
+  .img-container {
+    height: 400px;
+  }
+}
 </style>
