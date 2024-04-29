@@ -47,4 +47,9 @@ export default {
     color: #fff;
   }
 }
+@include media(tablet) {
+  .shop-bar {
+    display: none;
+  }
+}
 </style>
