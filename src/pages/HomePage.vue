@@ -21,9 +21,27 @@ export default {
   },
   methods: {
     async getData() {
-      const authUrl = `https://nashi-sushi3.joinposter.com/api/v2/auth/access_token`;
-      const res = await axios.get(authUrl);
-      console.log(res);
+      const account = "aleksandrkrizhonovsky"; // Замените на значение из $_GET['account']
+      const code = "fc12ffdcd048973300b35c1714401989"; // Замените на значение из $_GET['code']
+
+      const url = `https://${account}.joinposter.com/api/v2/auth/access_token`;
+
+      const auth = {
+        application_id: 3457,
+        application_secret: "fc12ffdcd048973300b35c1714401989",
+        grant_type: "authorization_code",
+        redirect_uri: "https://restoran-vue.vercel.app/",
+        code: code,
+      };
+
+      axios
+        .post(url, auth)
+        .then((response) => {
+          console.log("Ответ:", response.data);
+        })
+        .catch((error) => {
+          console.error("Ошибка:", error);
+        });
     },
   },
 
