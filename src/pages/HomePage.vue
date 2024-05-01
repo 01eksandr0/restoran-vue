@@ -21,23 +21,12 @@ export default {
   },
   methods: {
     async getData() {
-      const account = "aleksandrkrizhonovsky"; // Замените на значение из $_GET['account']
-      const code = "fc12ffdcd048973300b35c1714401989"; // Замените на значение из $_GET['code']
-
-      const url = `https://${account}.joinposter.com/api/v2/auth/access_token`;
-      const headers = {
-        "Access-Control-Allow-Origin": "https://nashi-sushi3.ps.me",
-        "Access-Control-Allow-Credentials": true,
-        // Другие заголовки, если необходимо
-      };
-
       axios
         .get(
-          "https://joinposter.com/api/menu.getCategories?token=388658:6876523b828df7f6545d67f8363887d5&fiscal=0",
-          { headers: headers }
+          "https://joinposter.com/api/menu.getProducts?token=388658:6876523b828df7f6545d67f8363887d5"
         )
         .then((response) => {
-          console.log("Ответ:", response.data);
+          console.log(response);
         })
         .catch((error) => {
           console.error("Ошибка:", error);
