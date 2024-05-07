@@ -1,7 +1,7 @@
 <template>
   <div v-if="getQuantity" class="shop-bar">
     <p class="quantity">{{ getQuantity }} товар,</p>
-    <p class="sum">820грн</p>
+    <p class="sum">{{ getSum }}грн</p>
     <router-link class="link" to="/shop"
       >Замовити<v-icon name="bi-chevron-right"
     /></router-link>
@@ -11,7 +11,7 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  computed: mapGetters(["getQuantity"]),
+  computed: mapGetters(["getQuantity", "getSum"]),
 };
 </script>
 

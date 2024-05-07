@@ -1,20 +1,28 @@
 <template>
   <div class="item">
     <div class="img-container">
-      <img :src="info.src" alt="" class="img" />
+      <img
+        :src="'https://joinposter.com' + (info.photo_origin || info.photo)"
+        alt=""
+        class="img"
+      />
     </div>
     <div class="text-content">
-      <h3 class="title">Філадельфія лайт 235г</h3>
-      <p class="ingridients">
-        Креветка, ікра тобіко, філадельфія, огірок, авокадо, рис, норі.
+      <h3 class="title">{{ info.product_name }}</h3>
+      <p v-if="info.ingredients" class="ingridients">
+        {{
+          info.ingredients
+            .reduce((text, i) => text + ", " + i.ingredient_name, "")
+            .slice(2)
+        }}
       </p>
       <div class="bottom">
-        <p class="price">180 грн</p>
+        <p class="price">{{ info.price[1].slice(0, -2) }} грн</p>
         <div class="control">
           <button
             v-if="getQuantity"
             class="btn-minus"
-            @click="discrimProduct(info.id)"
+            @click="discrimProduct(info.product_id)"
           >
             -
           </button>
@@ -37,7 +45,8 @@ export default {
     ...mapGetters(["shopList"]),
     getQuantity() {
       return (
-        this.shopList.find((item) => item.id === this.info.id)?.quantity || 0
+        this.shopList.find((item) => item.product_id === this.info.product_id)
+          ?.quantity || 0
       );
     },
   },
@@ -55,8 +64,8 @@ export default {
   flex-direction: column;
   gap: 0px;
   &:hover .img {
-    transform: scale(110%);
-    z-index: 0;
+    height: 340px;
+    width: 340px;
   }
 }
 .img-container {
@@ -74,11 +83,13 @@ export default {
   flex-direction: column;
   gap: 6px;
   padding: 10px;
+  width: 100%;
 }
 .img {
   height: 300px;
   width: 300px;
-  transition: transform $animation-duration $animation-time-function;
+  transition: width $animation-duration $animation-time-function,
+    height $animation-duration $animation-time-function;
 }
 .title {
   font-size: 22px;
@@ -146,4 +157,5 @@ export default {
   }
 }
 </style>
-import { computed } from "vue";
+import { computed } from "vue";import { info } from "sass";import { info } from
+"sass";

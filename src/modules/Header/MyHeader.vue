@@ -7,7 +7,7 @@
         <NavBar :openMobailMenu="openMobailMenu" />
       </div>
     </Container>
-    <FilterScroll />
+    <FilterScroll v-if="$route.path === '/' && getProducts.drinks" />
     <MobailMenu v-if="isMobailMenu" :closeModalMenu="closeModalMenu" />
   </header>
 </template>
@@ -17,6 +17,7 @@ import MobailMenu from "../MobailMenu/MobailMenu.vue";
 import NavBar from "./NavBar.vue";
 import Telephone from "./Telephone.vue";
 import FilterScroll from "./FilterScroll.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: { NavBar, Telephone, FilterScroll, MobailMenu },
@@ -25,6 +26,7 @@ export default {
       isMobailMenu: false,
     };
   },
+  computed: mapGetters(["getProducts"]),
   methods: {
     openMobailMenu() {
       this.isMobailMenu = true;
@@ -45,6 +47,7 @@ export default {
   left: 10px;
   right: 10px;
   border-radius: 20px;
+  z-index: 2;
 }
 .container-header {
   width: 100%;

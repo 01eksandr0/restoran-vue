@@ -2,8 +2,10 @@
   <div class="filter">
     <Container>
       <ul class="scroll-bar">
-        <li v-for="item in list" :key="item.id">
-          <a class="scroll-link">{{ item.name }}</a>
+        <li v-for="value in getProducts" :key="value[0].menu_category_id">
+          <a :href="'#' + value[0].menu_category_id" class="scroll-link">{{
+            value[0].category_name
+          }}</a>
         </li>
       </ul>
     </Container>
@@ -11,17 +13,10 @@
 </template>
 
 <script>
-import data from "./DATA/position.json";
+import { mapGetters } from "vuex";
 export default {
   name: "FilterScroll",
-  data() {
-    return {
-      list: [],
-    };
-  },
-  mounted() {
-    this.list = data;
-  },
+  computed: mapGetters(["getProducts"]),
 };
 </script>
 
@@ -66,6 +61,11 @@ export default {
       color: $orange;
       background-color: #cec7ca;
     }
+  }
+}
+@include media(desktop) {
+  .filter {
+    top: 85px;
   }
 }
 </style>

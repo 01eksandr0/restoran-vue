@@ -13,6 +13,7 @@ import {
   BiChevronDown,
   BiChevronRight,
   IoClose,
+  IoChevronBack,
 } from "oh-vue-icons/icons";
 
 const app = createApp(App);
@@ -24,7 +25,8 @@ addIcons(
   BiTelephone,
   BiChevronDown,
   BiChevronRight,
-  IoClose
+  IoClose,
+  IoChevronBack
 );
 components.forEach((component) => {
   app.component(component.name, component);
